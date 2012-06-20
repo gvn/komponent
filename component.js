@@ -3,89 +3,89 @@
 
 /*
 
-	Component Name
-	VERSION 0.0.1
-	AUTHOR X.X.
+    Component Name
+    VERSION 0.0.1
+    AUTHOR X.X.
 
-	DEPENDENCIES:
-	
-	- jQuery
+    DEPENDENCIES:
+    
+    - jQuery 1.7.2
 
-	TODO:
-	
-	- 
+    TODO:
+    
+    - 
 
 */
 
 window.Component = function (target, options) {
-	var self = this,
-		defaults;
+    var self = this,
+        defaults;
 
-	// Event subscription setup
+    // Event subscription setup
 
-	self.events.parent = self;
-	self.callbacks = {};
+    self.events.parent = self;
+    self.callbacks = {};
 
-	// Options
+    // Options
 
-	defaults = {};
-	$.extend(defaults, options);
-	self.options = defaults;
+    defaults = {};
+    $.extend(defaults, options);
+    self.options = defaults;
 
-	// Element references
+    // Element references
 
-	self.$target = $(target);
+    self.$target = $(target);
 
-	// Properties
-
-
-	// Setup
+    // Properties
 
 
-	// Event Delegation
+    // Setup
+
+
+    // Event Delegation
 
 
 };
 
 window.Component.prototype = {
-	events: {
-		actionHappened: function (event) {
-			var self = this.parent;
+    events: {
+        actionHappened: function (event) {
+            var self = this.parent;
 
-			self.runCallbacks('actionHappened', event);
-		}
-	},
-	action: function () {
-		var self = this;
+            self.runCallbacks('actionHappened', event);
+        }
+    },
+    action: function () {
+        var self = this;
 
-		self.events.actionHappened({metadata: 'More event info...'});
-	},
-	bind: function (eventType, callback, scope) {
-		var self = this;
+        self.events.actionHappened({metadata: 'More event info...'});
+    },
+    bind: function (eventType, callback, scope) {
+        var self = this;
 
-		if (typeof self.callbacks[eventType] === 'undefined') {
-			self.callbacks[eventType] = [];
-		}
+        if (typeof self.callbacks[eventType] === 'undefined') {
+            self.callbacks[eventType] = [];
+        }
 
-		self.callbacks[eventType].push({
-			callback: callback,
-			scope: scope
-		});
-	},
-	unbind: function (eventType) {
-		var self = this;
+        self.callbacks[eventType].push({
+            callback: callback,
+            scope: scope
+        });
+    },
+    unbind: function (eventType) {
+        var self = this;
 
-		self.callbacks[eventType] = [];
-	},
-	runCallbacks: function (eventType, eventData) {
-		var self = this,
-			i,
-			ii;
+        self.callbacks[eventType] = [];
+    },
+    runCallbacks: function (eventType, eventData) {
+        var self = this,
+            i,
+            ii;
 
-		if (typeof self.callbacks[eventType] !== 'undefined') {
-			for (i = 0, ii = self.callbacks[eventType].length; i < ii; i++) {
-				self.callbacks[eventType][i].callback.call(self.callbacks[eventType][i].scope || self, eventData);
-			}
-		}
-	}
+        if (typeof self.callbacks[eventType] !== 'undefined') {
+            for (i = 0, ii = self.callbacks[eventType].length; i < ii; i++) {
+                self.callbacks[eventType][i].callback.call(self.callbacks[eventType][i].scope || self, eventData);
+            }
+        }
+    }
 };
