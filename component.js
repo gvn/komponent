@@ -18,23 +18,23 @@
 */
 
 window.Component = function (target, options) {
-    var self = this,
+    var base = this,
         defaults;
 
     // Event subscription setup
 
-    self.events.parent = self;
-    self.callbacks = {};
+    base.events.parent = base;
+    base.callbacks = {};
 
     // Options
 
     defaults = {};
     $.extend(defaults, options);
-    self.options = defaults;
+    base.options = defaults;
 
     // Element references
 
-    self.$target = $(target);
+    base.$target = $(target);
 
     // Properties
 
@@ -50,41 +50,41 @@ window.Component = function (target, options) {
 window.Component.prototype = {
     events: {
         actionHappened: function (event) {
-            var self = this.parent;
+            var base = this.parent;
 
-            self.runCallbacks('actionHappened', event);
+            base.runCallbacks('actionHappened', event);
         }
     },
     action: function () {
-        var self = this;
+        var base = this;
 
-        self.events.actionHappened({metadata: 'More event info...'});
+        base.events.actionHappened({metadata: 'More event info...'});
     },
     bind: function (eventType, callback, scope) {
-        var self = this;
+        var base = this;
 
-        if (typeof self.callbacks[eventType] === 'undefined') {
-            self.callbacks[eventType] = [];
+        if (typeof base.callbacks[eventType] === 'undefined') {
+            base.callbacks[eventType] = [];
         }
 
-        self.callbacks[eventType].push({
+        base.callbacks[eventType].push({
             callback: callback,
             scope: scope
         });
     },
     unbind: function (eventType) {
-        var self = this;
+        var base = this;
 
-        self.callbacks[eventType] = [];
+        base.callbacks[eventType] = [];
     },
     runCallbacks: function (eventType, eventData) {
-        var self = this,
+        var base = this,
             i,
             ii;
 
-        if (typeof self.callbacks[eventType] !== 'undefined') {
-            for (i = 0, ii = self.callbacks[eventType].length; i < ii; i++) {
-                self.callbacks[eventType][i].callback.call(self.callbacks[eventType][i].scope || self, eventData);
+        if (typeof base.callbacks[eventType] !== 'undefined') {
+            for (i = 0, ii = base.callbacks[eventType].length; i < ii; i++) {
+                base.callbacks[eventType][i].callback.call(base.callbacks[eventType][i].scope || base, eventData);
             }
         }
     }

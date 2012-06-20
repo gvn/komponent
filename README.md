@@ -1,3 +1,6 @@
 # Component Pattern
 
-A starter template for front end components. Contains a basic event binding system with a working example.
+Author: Gavin Suntop 
+gavin@gsuntop.com
+
+A starter JS template for front end UI components. Contains a simple working example of event binding.
