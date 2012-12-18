@@ -5,7 +5,7 @@
 
     Component
     VERSION 0.0.1
-    AUTHOR X.X.
+    AUTHOR #AUTHOR#
 
     DEPENDENCIES:
     
