@@ -9,7 +9,7 @@ Dependencies: jQuery
 
 ## Bash Function
 
-The following code can be added to your .bashrc to generate new components with the 'jsc' command.
+The following code can be added to your .bashrc to generate new components with the **jsc** command.
 
 ```bash
 function jsc() {
