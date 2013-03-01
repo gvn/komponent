@@ -12,7 +12,7 @@ function jsc() {
     echo -n "Author: "
     read author
 
-    # strip spaces from class name
+    # strip spaces from component name
     local componentNameNoSpace="$(echo $componentName | tr -d ' ')"
 
     # convert filename to all lowercase and prepend namespace if specified
@@ -22,12 +22,12 @@ function jsc() {
         local filename="$(echo $componentNameNoSpace.js | tr '[:upper:]' '[:lower:]')"
     fi
 
-    curl https://raw.github.com/gvn/component-pattern/master/component.js > $filename
+    curl https://raw.github.com/gvn/component-pattern/fire/component.js > $filename
 
     # convert tokens within scaffold to specified values
-    sed -i .bak "s/Component/$componentNameNoSpace/g" $filename
-    sed -i .bak "s/window/$namespace/g" $filename
-    sed -i .bak "s/#AUTHOR#/$author/g" $filename
+    sed -i .bak "s/%COMPONENT_NAME%/$componentNameNoSpace/g" $filename
+    sed -i .bak "s/%NAMESPACE%/$namespace/g" $filename
+    sed -i .bak "s/%AUTHOR%/$author/g" $filename
 
     rm $filename.bak
 }
