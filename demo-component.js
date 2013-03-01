@@ -3,9 +3,9 @@
 
 /*
 
-    %COMPONENT_NAME%
+    Amazing Component
     VERSION 0.0.1
-    AUTHOR %AUTHOR%
+    AUTHOR G.S.
 
     DEPENDENCIES:
 
@@ -18,9 +18,9 @@
 
 */
 
-var %NAMESPACE% = window.%NAMESPACE% || {};
+var DEMO = window.DEMO || {};
 
-%NAMESPACE%.%COMPONENT_NAME% = function (target, options) {
+DEMO.Component = function (target, options) {
     var self = this,
         defaults;
 
@@ -46,9 +46,24 @@ var %NAMESPACE% = window.%NAMESPACE% || {};
 
     // Event Delegation
 
+    self.bind('actionHappened', function () {
+        self.reaction();
+    });
 };
 
-%NAMESPACE%.%COMPONENT_NAME%.prototype = {
+DEMO.Component.prototype = {
+    action: function () {
+        var self = this;
+
+        console.log('Action');
+
+        self.fire('actionHappened', {time: (new Date()).toString()});
+    },
+    reaction: function () {
+        var self = this;
+
+        console.log('Reaction');
+    },
     bind: callbackMixins.bind,
     unbind: callbackMixins.unbind,
     fire: callbackMixins.fire
