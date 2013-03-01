@@ -8,6 +8,18 @@
 </head>
 <body>
 
+    <pre>
+        var myComponent = new DEMO.Component();
+
+        // Subscribe callback
+
+        myComponent.bind('actionHappened', function (event) {
+            console.log('External callback.', event);
+        });
+
+        myComponent.action();
+    </pre>
+
 </body>
 </html>
 
