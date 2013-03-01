@@ -17,13 +17,14 @@
 
 */
 
-window.Component = function (target, options) {
+var NAMESPACE = NAMESPACE || {};
+
+NAMESPACE.Component = function (target, options) {
     var self = this,
         defaults;
 
     // Event subscription setup
 
-    self.events.parent = self;
     self.callbacks = {};
 
     // Options
@@ -44,22 +45,35 @@ window.Component = function (target, options) {
 
     // Event Delegation
 
-
+    // DEMO
+    self.bind('actionHappened', function () {
+        self.reaction();
+    });
+    // END: DEMO
 };
 
-window.Component.prototype = {
-    events: {
-        actionHappened: function (event) {
-            var self = this.parent;
+NAMESPACE.Component.prototype = {
 
-            self.runCallbacks('actionHappened', event);
-        }
-    },
+    // DEMO
+
     action: function () {
         var self = this;
 
-        self.events.actionHappened({metadata: 'More event info...'});
+        console.log('Action');
+
+        self.fire('actionHappened', {time: (new Date()).toString()});
     },
+    reaction: function () {
+        var self = this;
+
+        console.log('Reaction');
+    },
+
+    // END: DEMO
+
+    // bind(eventType:String, callback:Function, scope:Object)
+    // Bind a callback function to a named event type with optional callback scope.
+
     bind: function (eventType, callback, scope) {
         var self = this;
 
@@ -69,22 +83,30 @@ window.Component.prototype = {
 
         self.callbacks[eventType].push({
             callback: callback,
-            scope: scope
+            scope: scope || self // Bind scope to component if unspecified
         });
     },
+
+    // unbind(eventType:String)
+    // Unbind all callbacks for given event type.
+
     unbind: function (eventType) {
         var self = this;
 
         self.callbacks[eventType] = [];
     },
-    runCallbacks: function (eventType, eventData) {
+
+    // fire(eventType:String, eventData: Object)
+    // Fires callbacks registered for given event type with optional event data object.
+
+    fire: function (eventType, eventData) {
         var self = this,
             i,
             ii;
 
         if (typeof self.callbacks[eventType] !== 'undefined') {
             for (i = 0, ii = self.callbacks[eventType].length; i < ii; i++) {
-                self.callbacks[eventType][i].callback.call(self.callbacks[eventType][i].scope || self, eventData);
+                self.callbacks[eventType][i].callback.call(self.callbacks[eventType][i].scope, eventData);
             }
         }
     }
