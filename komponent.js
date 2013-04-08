@@ -23,7 +23,7 @@ if (typeof window.Komponent !== 'undefined') {
     throw 'Global "Komponent" already in use.';
 }
 
-var Komponent = function () {};
+window.Komponent = function () {};
 
 Komponent.prototype = {
 
@@ -31,31 +31,23 @@ Komponent.prototype = {
     // Bind a callback function to a named event type.
 
     on: function (eventType, callback) {
-        var self = this;
-
-        if (typeof self.callbacks[eventType] === 'undefined') {
-            self.callbacks[eventType] = [];
+        if (typeof this.callbacks[eventType] === 'undefined') {
+            this.callbacks[eventType] = [];
         }
 
-        self.callbacks[eventType].push({
-            callback: callback
-        });
+        this.callbacks[eventType].push(callback);
     },
 
     // unbind(eventType:String)
     // Unbind all callbacks for given event type.
 
     unbind: function (eventType) {
-        var self = this;
-
-        self.callbacks[eventType] = [];
+        this.callbacks[eventType] = [];
     },
 
     // TODO
 
     once: function (eventType, callback) {
-        var self = this;
-
 
     },
 
@@ -63,13 +55,12 @@ Komponent.prototype = {
     // Fires callbacks registered for given event type with optional event metadata.
 
     fire: function (eventType, eventData) {
-        var self = this,
-            i,
+        var i,
             ii;
 
-        if (typeof self.callbacks[eventType] !== 'undefined') {
-            for (i = 0, ii = self.callbacks[eventType].length; i < ii; i++) {
-                self.callbacks[eventType][i].callback.call(self, eventData);
+        if (typeof this.callbacks[eventType] !== 'undefined') {
+            for (i = 0, ii = this.callbacks[eventType].length; i < ii; i++) {
+                this.callbacks[eventType][i].call(this, eventData);
             }
         }
     }
