@@ -2,7 +2,7 @@
 
 /*
 
-    Komponent
+    Komp
 
     A base "class" for JavaScript components.
 
@@ -19,13 +19,13 @@
 
 */
 
-if (typeof window.Komponent !== 'undefined') {
-    throw 'Global "Komponent" already in use.';
+if (typeof window.Komp !== 'undefined') {
+    throw 'Global "Komp" already in use.';
 }
 
-window.Komponent = function () {};
+window.Komp = function () {};
 
-Komponent.prototype = {
+Komp.prototype = {
 
     // on(eventType:String, callback:Function)
     // Bind a callback function to a named event type.

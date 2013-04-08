@@ -1,4 +1,4 @@
-# Komponent
+# Komp
 
 Author: Gvn Lazar Suntop
 gavin@gsuntop.com

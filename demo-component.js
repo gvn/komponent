@@ -1,9 +1,9 @@
-/*global $: false, console: false, Komponent: false */
+/*global $: false, console: false, Komp: false */
 /*jslint browser: true, sloppy: true, forin: true, plusplus: true, maxerr: 50, indent: 4 */
 
 /*
 
-    Demo Komponent
+    Demo Komp
     VERSION 0.0.1
     AUTHOR G.S.
 
@@ -49,7 +49,7 @@ DEMO.Component = function (target, options) {
     });
 };
 
-DEMO.Component.prototype = new Komponent();
+DEMO.Component.prototype = new Komp();
 
 DEMO.Component.prototype.action = function () {
     var self = this;

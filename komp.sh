@@ -22,7 +22,7 @@ function jsc() {
         local filename="$(echo $componentNameNoSpace.js | tr '[:upper:]' '[:lower:]')"
     fi
 
-    curl https://raw.github.com/gvn/component-pattern/fire/template.js > $filename
+    curl https://raw.github.com/gvn/komp/template.js > $filename
 
     # convert tokens within scaffold to specified values
     sed -i .bak "s/%COMPONENT_NAME%/$componentNameNoSpace/g" $filename

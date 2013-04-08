@@ -1,4 +1,4 @@
-/*global $: false, console: false, Komponent: false */
+/*global $: false, console: false, Komp: false */
 /*jslint browser: true, sloppy: true, forin: true, plusplus: true, maxerr: 50, indent: 4 */
 
 /*
@@ -46,4 +46,4 @@ var %NAMESPACE% = window.%NAMESPACE% || {};
 
 };
 
-%NAMESPACE%.%COMPONENT_NAME%.prototype = new Komponent();
+%NAMESPACE%.%COMPONENT_NAME%.prototype = new Komp();
