@@ -24,8 +24,6 @@ DEMO.Component = function (target, options) {
     var self = this,
         defaults;
 
-    // Event subscription setup
-
     self.callbacks = {};
 
     // Options

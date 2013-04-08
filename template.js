@@ -9,7 +9,7 @@
 
     DEPENDENCIES:
 
-    - component.js
+    - komponent.js
     - jQuery 1.7.2
 
     TODO:
@@ -23,6 +23,8 @@ var %NAMESPACE% = window.%NAMESPACE% || {};
 %NAMESPACE%.%COMPONENT_NAME% = function (options) {
     var self = this,
         defaults;
+
+    self.callbacks = {};
 
     // Options
 

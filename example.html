@@ -9,15 +9,15 @@
 <body>
 
     <pre>
-        var myComponent = new DEMO.Component();
+    var myComponent = new DEMO.Component();
 
-        // Subscribe callback
+    // Subscribe callback
 
-        myComponent.on('action', function (event) {
-            console.log('External callback.', event);
-        });
+    myComponent.on('action', function (event) {
+       console.log('External callback - C1.', event);
+    });
 
-        myComponent.action();
+    myComponent.action();
     </pre>
 
 </body>
@@ -32,16 +32,11 @@
 
 <script type="text/javascript">
     var myComponent = new DEMO.Component();
-    var myComponent2 = new DEMO.Component();
 
     // Subscribe callback
 
     myComponent.on('action', function (event) {
        console.log('External callback - C1.', event);
-    });
-
-    myComponent2.on('action', function (event) {
-       console.log('External callback - C2.', event);
     });
 
     myComponent.action();
