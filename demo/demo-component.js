@@ -3,7 +3,7 @@
 
 /*
 
-    Demo Komp
+    Demo Component
     VERSION 0.0.1
     AUTHOR G.S.
 
