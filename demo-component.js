@@ -1,9 +1,9 @@
-/*global $: false, console: false, callbackMixins: false */
+/*global $: false, console: false, Komponent: false */
 /*jslint browser: true, sloppy: true, forin: true, plusplus: true, maxerr: 50, indent: 4 */
 
 /*
 
-    Amazing Component
+    Demo Komponent
     VERSION 0.0.1
     AUTHOR G.S.
 
@@ -46,25 +46,23 @@ DEMO.Component = function (target, options) {
 
     // Event Delegation
 
-    self.bind('actionHappened', function () {
+    self.on('action', function () {
         self.reaction();
     });
 };
 
-DEMO.Component.prototype = {
-    action: function () {
-        var self = this;
+DEMO.Component.prototype = new Komponent();
 
-        console.log('Action');
+DEMO.Component.prototype.action = function () {
+    var self = this;
 
-        self.fire('actionHappened', {time: (new Date()).toString()});
-    },
-    reaction: function () {
-        var self = this;
+    console.log('Action');
 
-        console.log('Reaction');
-    },
-    bind: callbackMixins.bind,
-    unbind: callbackMixins.unbind,
-    fire: callbackMixins.fire
+    self.fire('action', {time: (new Date()).toString()});
+};
+
+DEMO.Component.prototype.reaction = function () {
+    var self = this;
+
+    console.log('Reaction');
 };

@@ -1,4 +1,4 @@
-/*global $: false, console: false, callbackMixins: false */
+/*global $: false, console: false, Komponent: false */
 /*jslint browser: true, sloppy: true, forin: true, plusplus: true, maxerr: 50, indent: 4 */
 
 /*
@@ -9,7 +9,7 @@
 
     DEPENDENCIES:
 
-    - callback.js
+    - component.js
     - jQuery 1.7.2
 
     TODO:
@@ -20,13 +20,9 @@
 
 var %NAMESPACE% = window.%NAMESPACE% || {};
 
-%NAMESPACE%.%COMPONENT_NAME% = function (target, options) {
+%NAMESPACE%.%COMPONENT_NAME% = function (options) {
     var self = this,
         defaults;
-
-    // Event subscription setup
-
-    self.callbacks = {};
 
     // Options
 
@@ -36,7 +32,6 @@ var %NAMESPACE% = window.%NAMESPACE% || {};
 
     // Element references
 
-    self.$target = $(target);
 
     // Properties
 
@@ -46,10 +41,7 @@ var %NAMESPACE% = window.%NAMESPACE% || {};
 
     // Event Delegation
 
+
 };
 
-%NAMESPACE%.%COMPONENT_NAME%.prototype = {
-    bind: callbackMixins.bind,
-    unbind: callbackMixins.unbind,
-    fire: callbackMixins.fire
-};
+%NAMESPACE%.%COMPONENT_NAME%.prototype = new Komponent();

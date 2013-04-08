@@ -13,7 +13,7 @@
 
         // Subscribe callback
 
-        myComponent.bind('actionHappened', function (event) {
+        myComponent.on('action', function (event) {
             console.log('External callback.', event);
         });
 
@@ -27,16 +27,21 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="_fe/js/lib/jquery-1.8.3.min.js"><\/script>')</script>
 
-<script src="callback.js"></script>
+<script src="komponent.js"></script>
 <script src="demo-component.js"></script>
 
 <script type="text/javascript">
     var myComponent = new DEMO.Component();
+    var myComponent2 = new DEMO.Component();
 
     // Subscribe callback
 
-    myComponent.bind('actionHappened', function (event) {
-       console.log('External callback.', event);
+    myComponent.on('action', function (event) {
+       console.log('External callback - C1.', event);
+    });
+
+    myComponent2.on('action', function (event) {
+       console.log('External callback - C2.', event);
     });
 
     myComponent.action();

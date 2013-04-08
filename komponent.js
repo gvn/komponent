@@ -1,11 +1,13 @@
-/*global $: false, console: false */
 /*jslint browser: true, sloppy: true, forin: true, plusplus: true, maxerr: 50, indent: 4 */
 
 /*
 
-    Callback Mixins
+    Komponent
+
+    A base "class" for JavaScript components.
+
     VERSION 0.1.0
-    AUTHOR G.S.
+    AUTHOR Gvn Lazar Suntop
 
     DEPENDENCIES:
 
@@ -17,16 +19,18 @@
 
 */
 
-if (typeof window.callbackMixins !== 'undefined') {
-    throw 'Namespace conflict: "callbackMixins" already in use.';
+if (typeof window.Komponent !== 'undefined') {
+    throw 'Global "Komponent" already in use.';
 }
 
-var callbackMixins = {
+var Komponent = function () {};
 
-    // bind(eventType:String, callback:Function, scope:Object)
-    // Bind a callback function to a named event type with optional callback scope.
+Komponent.prototype = {
 
-    bind: function (eventType, callback, scope) {
+    // on(eventType:String, callback:Function)
+    // Bind a callback function to a named event type.
+
+    on: function (eventType, callback) {
         var self = this;
 
         if (typeof self.callbacks[eventType] === 'undefined') {
@@ -34,8 +38,7 @@ var callbackMixins = {
         }
 
         self.callbacks[eventType].push({
-            callback: callback,
-            scope: scope || self // Bind scope to component if unspecified
+            callback: callback
         });
     },
 
@@ -48,6 +51,14 @@ var callbackMixins = {
         self.callbacks[eventType] = [];
     },
 
+    // TODO
+
+    once: function (eventType, callback) {
+        var self = this;
+
+
+    },
+
     // fire(eventType:String, eventData: Object)
     // Fires callbacks registered for given event type with optional event metadata.
 
@@ -58,8 +69,9 @@ var callbackMixins = {
 
         if (typeof self.callbacks[eventType] !== 'undefined') {
             for (i = 0, ii = self.callbacks[eventType].length; i < ii; i++) {
-                self.callbacks[eventType][i].callback.call(self.callbacks[eventType][i].scope, eventData);
+                self.callbacks[eventType][i].callback.call(self, eventData);
             }
         }
     }
+
 };
