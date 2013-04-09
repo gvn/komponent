@@ -1,2 +1,4 @@
 .DS_Store
 TODO.txt
+node_modules
+gruntfile.js

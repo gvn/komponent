@@ -9,8 +9,8 @@
 
     DEPENDENCIES:
 
-    - komponent.js
-    - jQuery 1.7.2
+    - komp.js
+    - jQuery
 
     TODO:
 
