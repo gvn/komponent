@@ -1,4 +1,4 @@
-/*global $: false, console: false, Komp: false */
+/*global console: false, Komponent: false */
 /*jslint browser: true, sloppy: true, forin: true, plusplus: true, maxerr: 50, indent: 4 */
 
 /*
@@ -9,8 +9,7 @@
 
     DEPENDENCIES:
 
-    - komp.js
-    - jQuery
+    - komponent.js
 
     TODO:
 
@@ -22,28 +21,33 @@ var %NAMESPACE% = window.%NAMESPACE% || {};
 
 %NAMESPACE%.%COMPONENT_NAME% = function (options) {
     var self = this,
-        defaults;
+        defaults,
+        option;
 
     self.callbacks = {};
 
-    // Options
+    // Options ----------------------------------------------------------------
 
     defaults = {};
-    $.extend(defaults, options);
+
+    for (option in options) {
+        defaults[option] = options[option] || defaults[option];
+    }
+
     self.options = defaults;
 
-    // Element references
+    // Element references -----------------------------------------------------
 
 
-    // Properties
+    // Properties -------------------------------------------------------------
 
 
-    // Setup
+    // Setup ------------------------------------------------------------------
 
 
-    // Event Delegation
+    // Event Delegation -------------------------------------------------------
 
 
 };
 
-%NAMESPACE%.%COMPONENT_NAME%.prototype = new Komp();
+%NAMESPACE%.%COMPONENT_NAME%.prototype = new Komponent();

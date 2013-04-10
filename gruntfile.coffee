@@ -21,8 +21,8 @@ module.exports = (grunt) ->
       options:
         banner: '/*! <%= pkg.name %> <%= pkg.version %> <%= grunt.template.today("yyyy-mm-dd HH:MM") %> */\n'
       build:
-        src: 'komp.js'
-        dest: 'komp.min.js'
+        src: 'komponent.js'
+        dest: 'komponent.min.js'
 
     connect:
       server:

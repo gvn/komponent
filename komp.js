@@ -2,16 +2,12 @@
 
 /*
 
-    Komp
+    Komponent
 
     A base "class" for JavaScript components.
 
-    VERSION 0.1.0
+    VERSION 0.2.0
     AUTHOR Gvn Lazar Suntop
-
-    DEPENDENCIES:
-
-    - jQuery 1.7.2
 
     TODO:
 
@@ -19,13 +15,13 @@
 
 */
 
-if (typeof window.Komp !== 'undefined') {
-    throw 'Global "Komp" already in use.';
+if (typeof window.Komponent !== 'undefined') {
+    throw 'Global "Komponent" already in use.';
 }
 
-window.Komp = function () {};
+window.Komponent = function () {};
 
-window.Komp.prototype = {
+window.Komponent.prototype = {
 
     // Bind a callback function to a named event type.
 
@@ -49,10 +45,8 @@ window.Komp.prototype = {
 
     unbind: function (eventType, id) {
         if (typeof id === 'number') {
-            // nullify callback at specific address
             this.callbacks[eventType][id] = null;
         } else {
-            // unbind all callbacks if an id is unspecified
             this.callbacks[eventType] = [];
         }
     },
