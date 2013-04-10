@@ -14,7 +14,7 @@
 
 module.exports = (grunt) ->
 
-  grunt.initConfig(
+  grunt.initConfig
     pkg: grunt.file.readJSON('package.json')
 
     uglify:
@@ -34,8 +34,6 @@ module.exports = (grunt) ->
       all:
         options:
           urls: ['http://localhost:8000/test/runner.html']
-
-  )
 
   grunt.loadNpmTasks('grunt-contrib-uglify')
   grunt.loadNpmTasks('grunt-contrib-connect')
