@@ -1,12 +1,17 @@
 # Komponent
 
-Author: Gvn Lazar Suntop
-gavin@gsuntop.com
+Author: [Gvn Lazar Suntop](mailto:gavin@gsuntop.com)
 
-A JS base "class" for front end UI components. Contains a simple working example of event binding.
+A base class for JavaScript components and a generator for new component scaffolding.
 
-Dependencies: jQuery (For CLI generated starter templates only.)
+
+## Event API
+
+- **on** ( eventType:*String*, callback:*Function* )
+- **unbind** ( eventType:*String*, id:*Number* )
+- **once** ( eventType:*String*, callback:*Function* )
+- **fire** ( eventType:*String*, eventData:*Object* )
 
 ## Bash CLI
 
-TODO - ADD DOCS
+Komponent can be used stand-alone, but there is also a bundled "komp" script which makes generating new components quick and simple.
