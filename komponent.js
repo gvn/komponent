@@ -19,13 +19,25 @@ if (typeof window.Komponent !== 'undefined') {
     throw 'Global "Komponent" already in use.';
 }
 
+/**
+* This is the description for my class.
+*
+* @class Komponent
+* @constructor
+*/
+
 window.Komponent = function () {};
 
 window.Komponent.prototype = {
 
-    // Bind a callback function to a named event type.
-
-    // eventType:String, callback:Function
+    /**
+     * Bind a callback function to a named event type.
+     *
+     * @method on
+     * @param  {String}   eventType
+     * @param  {Function} callback
+     * @return {Number}
+     */
 
     on: function (eventType, callback) {
         if (typeof this.callbacks[eventType] === 'undefined') {
@@ -38,10 +50,15 @@ window.Komponent.prototype = {
         return this.callbacks[eventType].length - 1;
     },
 
-    // Unbind callbacks for given event type.
-    // All callbacks of given type will be removed if no ID is provided.
-
-    // eventType:String, id:Number
+    /**
+     * Unbind callbacks for given event type.
+     * All callbacks of given type will be removed if no ID is provided.
+     *
+     * @method unbind
+     * @param  {String} eventType
+     * @param  {Number} id
+     * @return {undefined}
+     */
 
     unbind: function (eventType, id) {
         if (typeof id === 'number') {
@@ -51,9 +68,14 @@ window.Komponent.prototype = {
         }
     },
 
-    // Register a callback that will unbind after it fires once
-
-    // eventType:String, callback:Function
+    /**
+     * Register a callback that will unbind after it fires once
+     *
+     * @method once
+     * @param  {String}   eventType
+     * @param  {Function} callback
+     * @return {undefined}
+     */
 
     once: function (eventType, callback) {
         var id;
@@ -64,9 +86,14 @@ window.Komponent.prototype = {
         });
     },
 
-    // Fires callbacks registered for given event type with optional event metadata.
-
-    // eventType:String, eventData: Object
+    /**
+     * Fires callbacks registered for given event type with optional event metadata.
+     *
+     * @method fire
+     * @param  {String} eventType
+     * @param  {Object} eventData
+     * @return {undefined}
+     */
 
     fire: function (eventType, eventData) {
         var i,

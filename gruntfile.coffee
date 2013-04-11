@@ -35,9 +35,21 @@ module.exports = (grunt) ->
         options:
           urls: ['http://localhost:8000/test/runner.html']
 
+    yuidoc:
+      compile:
+        name: '<%= pkg.name %>'
+        description: '<%= pkg.description %>'
+        version: '<%= pkg.version %>'
+        url: '<%= pkg.homepage %>'
+        options:
+          paths: '.'
+          outdir: 'docs/'
+
   grunt.loadNpmTasks('grunt-contrib-uglify')
   grunt.loadNpmTasks('grunt-contrib-connect')
   grunt.loadNpmTasks('grunt-contrib-qunit')
+  grunt.loadNpmTasks('grunt-contrib-yuidoc')
 
   grunt.registerTask('default', ['uglify'])
   grunt.registerTask('test', ['connect', 'qunit'])
+  grunt.registerTask('doc', ['yuidoc'])
