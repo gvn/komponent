@@ -50,9 +50,12 @@ module.exports = (grunt) ->
         options:
           archive: 'npm/npm-module.tgz'
           mode: 'tgz'
-        src:['npm/README.md','npm/komp.sh','npm/package.json']
-        flatten:true
-
+          pretty: true
+        files: [
+          (src: 'npm/komp.sh', dest: '/')
+          (src: 'npm/package.json', dest: '/')
+          (src: 'npm/README.md', dest: '/')
+        ]
 
 
   grunt.loadNpmTasks('grunt-contrib-uglify')
