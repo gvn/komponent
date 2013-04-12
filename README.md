@@ -1,13 +1,13 @@
 # Komponent.js
 
-**A base class for JavaScript components.**
+**A base class for event driven JavaScript components.**
 
 Author: [Gvn Lazar Suntop](mailto:gavin@gsuntop.com)
 
 
 ## Typical Usage
 
-Include **komponent.min.js**. New components inherit from `Komponent`.
+Include **[komponent.min.js](https://github.com/gvn/komponent/raw/master/komponent.min.js)** in your project. New components inherit from `Komponent`.
 
 Run **komp** to interactively create a new component via the command line. 
 
