@@ -18,8 +18,8 @@ Komponents have an event API allowing for external and internal callbacks for cu
 
 Komponent can be used stand-alone, but the bundled **komp** script makes generating new components easier.
 
-To install **komp**, run the following command:
+To install **komp** using [npm](https://npmjs.org/) run the following command:
 
-`curl -L http://goo.gl/2gVse > ~/bin/komp; chmod +x ~/bin/komp`
+`npm install -g komponent`
 
 Afterward you can create a new component by running `komp`. It will prompt you for various metadata and then create a new JavaScript component file.

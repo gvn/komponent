@@ -50,10 +50,10 @@ module.exports = (grunt) ->
         options:
           archive: 'npm/npm-module.tgz'
           mode: 'tgz'
-        files: [
-          (src:'npm/komp.sh')
-          (src:'npm/package.json')
-        ]
+        src:['README.md','npm/komp.sh','npm/package.json']
+        flatten:true
+
+
 
   grunt.loadNpmTasks('grunt-contrib-uglify')
   grunt.loadNpmTasks('grunt-contrib-connect')
