@@ -16,18 +16,18 @@ All new Komponents have a basic event API for subscribing callback functions bot
 Add calls to the `fire` method wherever you want subscribable custom events. You can optionally provide event metadata to be passed to the callback function with an object literal.  
 
 ```javascript
-Component.prototype.show = function () {
-    this.fire('show', {visibleItems: 3});
+Widget.prototype.show = function () {
+    this.fire('show', { visibleItems: 3 });
 }
 ```
 
 You can now subscribe an external callback function, which will execute after the component fires the named event.
 
 ```javascript
-var myComponent = new Component();
+var myWidget = new Widget();
 
-myComponent.on('show', function (event) {
-    alert('myComponent is showing ' + event.visibleItems + ' items');
+myWidget.on('show', function (event) {
+    alert('myWidget is showing ' + event.visibleItems + ' items');
 }
 ```
 
