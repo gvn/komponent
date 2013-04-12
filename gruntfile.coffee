@@ -50,7 +50,7 @@ module.exports = (grunt) ->
         options:
           archive: 'npm/npm-module.tgz'
           mode: 'tgz'
-        src:['README.md','npm/komp.sh','npm/package.json']
+        src:['npm/README.md','npm/komp.sh','npm/package.json']
         flatten:true
 
 
