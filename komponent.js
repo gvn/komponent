@@ -20,7 +20,7 @@ if (typeof window.Komponent !== 'undefined') {
 }
 
 /**
-* This is the description for my class.
+* DESCRIPTION
 *
 * @class Komponent
 * @constructor

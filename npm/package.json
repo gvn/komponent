@@ -2,8 +2,12 @@
   "name": "komponent",
   "description": "A base class for JavaScript components and a generator for component scaffolding.",
   "version": "0.2.0",
-  "author": "Gvn Lazar Suntop",
-  "keywords": ["javascript", "ui", "events", "pubsub", "scaffold", "template"],
+  "author": {
+    "name": "Gvn Lazar Suntop",
+    "email": "gavin@gsuntop.com",
+    "url": "http://github.com/gvn"
+  },
+  "keywords": ["javascript", "js", "ui", "events", "pubsub", "scaffold", "template", "component"],
   "homepage": "https://github.com/gvn/komponent",
   "repository": {
     "type": "git",

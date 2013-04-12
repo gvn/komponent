@@ -45,11 +45,22 @@ module.exports = (grunt) ->
           paths: '.'
           outdir: 'docs/'
 
+    compress:
+      main:
+        options:
+          archive: 'npm/npm-module.tgz'
+          mode: 'tgz'
+        files: [
+          (src:'npm/komp.sh')
+          (src:'npm/package.json')
+        ]
+
   grunt.loadNpmTasks('grunt-contrib-uglify')
   grunt.loadNpmTasks('grunt-contrib-connect')
   grunt.loadNpmTasks('grunt-contrib-qunit')
   grunt.loadNpmTasks('grunt-contrib-yuidoc')
+  grunt.loadNpmTasks('grunt-contrib-compress')
 
-  grunt.registerTask('default', ['uglify'])
+  grunt.registerTask('default', ['connect', 'qunit', 'uglify', 'compress'])
   grunt.registerTask('test', ['connect', 'qunit'])
   grunt.registerTask('doc', ['yuidoc'])
