@@ -1,4 +1,4 @@
-# Komponent.js
+![Komponent](https://dl.dropboxusercontent.com/u/268451/komponent-logo.png)
 
 **A base class for event driven JavaScript components.**
 
