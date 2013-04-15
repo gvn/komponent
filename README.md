@@ -4,6 +4,15 @@
 
 Author: [Gvn Lazar Suntop](mailto:gavin@gsuntop.com)
 
+## Installation
+
+Komponent can be used stand-alone, but the **komp** utility makes creating components easier.
+
+To install **komp** using [npm](https://npmjs.org/) run the following command:
+
+`npm install -g komponent`
+
+Afterward you can create a new component by running `komp`. It will prompt you for various metadata and create a new JavaScript component file based on the [starter template](https://github.com/gvn/komponent/blob/master/template.js).
 
 ## Typical Usage
 
@@ -48,15 +57,3 @@ Register a callback that will unbind after it fires once.
 **fire** ( eventType: `string`, eventData: `object` - *optional* )
 
 Fires callbacks registered for given event type with optional event metadata.
-
-
-
-## CLI
-
-Komponent can be used stand-alone, but the **komp** utility makes creating components easier.
-
-To install **komp** using [npm](https://npmjs.org/) run the following command:
-
-`npm install -g komponent`
-
-Afterward you can create a new component by running `komp`. It will prompt you for various metadata and then create a new JavaScript component file.
