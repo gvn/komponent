@@ -46,6 +46,8 @@ myWidget.on('show', function (event) {
 
 Bind a callback function to a named event type.
 
+Returns a numerical ID for the handler, which can later be used with *unbind*.
+
 **unbind** ( eventType: `string`, id: `number` - *optional* )
 
 Unbind callbacks for given event type. All callbacks of given type will be removed if no ID is provided.
