@@ -40,7 +40,7 @@ myWidget.on('show', function (event) {
 }
 ```
 
-## Event API
+## API
 
 **on** ( eventType: `string`, callback: `function` )
 
