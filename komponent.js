@@ -19,13 +19,6 @@ if (typeof window.Komponent !== 'undefined') {
     throw 'Global "Komponent" already in use.';
 }
 
-/**
-* DESCRIPTION
-*
-* @class Komponent
-* @constructor
-*/
-
 window.Komponent = function () {};
 
 window.Komponent.prototype = {
