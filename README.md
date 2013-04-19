@@ -18,11 +18,9 @@ Afterward you can create a new component by running `komp`. It will prompt you f
 
 Include **[komponent.min.js](https://github.com/gvn/komponent/raw/master/komponent.min.js)** in your project. New components inherit from `Komponent`.
 
-Run **komp** to interactively create a new component via the command line.
+Run **komp** to interactively create a new component via the command line. Your new component will inherit a basic event API and have a basic scaffolding.
 
-All new Komponents have a basic event API for subscribing callback functions both internally and externally.
-
-Add calls to the `fire` method wherever you want subscribable custom events. You can optionally provide event metadata to be passed to the callback function with an object literal.
+Add calls to the `fire` method wherever you want subscribable custom events. You can optionally pass event metadata to the callback function with an object literal.
 
 ```javascript
 Widget.prototype.show = function () {
@@ -30,7 +28,7 @@ Widget.prototype.show = function () {
 }
 ```
 
-You can now subscribe an external callback function, which will execute after the component fires the named event.
+You can now subscribe an external callback function, which will run after the component fires the named event.
 
 ```javascript
 var myWidget = new Widget();
@@ -40,9 +38,9 @@ myWidget.on('show', function (event) {
 }
 ```
 
-## Komponent as Mixin
+## Komponent Mixin
 
-You can also use Komponent's event system on existing objects as a mixin.
+Alternatively, you can use Komponent's event methods on existing objects as a mixin.
 
 Komponent has a utility method, `mix`, for accomplishing this. 
 
@@ -52,7 +50,7 @@ var existingObject = {};
 Komponent.mix(existingObject);
 ```
 
-Alternatively, you can access the Komponent event module by referencing `Komponent.mixin` directly.
+Note that you can access Komponent's event module by referencing `Komponent.mixin` if you want to use your own mixin method.
 
 
 ## Event API
