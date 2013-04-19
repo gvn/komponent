@@ -40,6 +40,21 @@ myWidget.on('show', function (event) {
 }
 ```
 
+## Komponent as Mixin
+
+You can also use Komponent's event system on existing objects as a mixin.
+
+Komponent has a utility method, `mix`, for accomplishing this. 
+
+```javascript
+var existingObject = {};
+
+Komponent.mix(existingObject);
+```
+
+Alternatively, you can access the Komponent event module by referencing `Komponent.mixin` directly.
+
+
 ## Event API
 
 **on** ( eventType: `string`, callback: `function` )

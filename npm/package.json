@@ -1,7 +1,7 @@
 {
   "name": "komponent",
   "description": "A base class for JavaScript components and a generator for component scaffolding.",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "author": {
     "name": "Gvn Lazar Suntop",
     "email": "gavin@gsuntop.com",

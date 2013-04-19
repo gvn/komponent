@@ -70,3 +70,22 @@ test('External once event only fires once', function () {
 
     strictEqual(callbacksFired, 1, 'Only 1 callback fired.');
 });
+
+test('Mixin to existing object', function () {
+    var someObject = {},
+        callbackFired = false;
+
+    Komponent.mix(someObject);
+
+    someObject.action = function () {
+        this.fire('action');
+    };
+
+    someObject.on('action', function () {
+        callbackFired = true;
+    });
+
+    someObject.action();
+
+    ok(callbackFired, 'Callback fired on object with Komponent mixed in.')
+});

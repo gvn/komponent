@@ -4,9 +4,9 @@
 
     Komponent
 
-    A base "class" for JavaScript components.
+    A driver for evented JavaScript components.
 
-    VERSION 0.2.0
+    VERSION 0.3.0
     AUTHOR Gvn Lazar Suntop
 
     TODO:
@@ -21,7 +21,7 @@ if (typeof window.Komponent !== 'undefined') {
 
 window.Komponent = function () {};
 
-window.Komponent.prototype = {
+window.Komponent.mixin = {
 
     /**
      * Bind a callback function to a named event type.
@@ -103,3 +103,25 @@ window.Komponent.prototype = {
     }
 
 };
+
+/**
+ * Mixin the Komponent methods to an existing object.
+ * @method mix
+ * @param  {Object} target
+ * @return {undefined}
+ */
+
+window.Komponent.mix = function (target) {
+    var method;
+
+    // Target object needs a place to store callback references
+    target.callbacks = {};
+
+    for (method in window.Komponent.mixin) {
+        target[method] = window.Komponent.mixin[method];
+    }
+};
+
+// Objects created using the 'new' operator only get the event methods and not 'mix' since it's a utility
+
+window.Komponent.prototype = window.Komponent.mixin;
