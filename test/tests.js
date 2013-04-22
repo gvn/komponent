@@ -1,4 +1,4 @@
-/*global test: false, equal: false, ok: false, Widget: false, strictEqual: false */
+/*global test: false, equal: false, ok: false, Widget: false, strictEqual: false, Komponent: false */
 /*jslint browser: true, sloppy: true, forin: true, plusplus: true, maxerr: 50, indent: 4 */
 
 test('One external event handler', function () {
@@ -72,7 +72,7 @@ test('External once event only fires once', function () {
 });
 
 test('Mixin to existing object', function () {
-    var someObject = {},
+    var someObject = { someMethod: function () {}, anotherMethod: function () {} },
         callbackFired = false;
 
     Komponent.mix(someObject);
@@ -87,5 +87,5 @@ test('Mixin to existing object', function () {
 
     someObject.action();
 
-    ok(callbackFired, 'Callback fired on object with Komponent mixed in.')
+    ok(callbackFired, 'Callback fired on object with Komponent mixed in.');
 });
