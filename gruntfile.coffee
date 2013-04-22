@@ -31,9 +31,12 @@ module.exports = (grunt) ->
           base: '.'
 
     qunit:
-      all:
+      uncompressed:
         options:
           urls: ['http://localhost:8000/test/runner.html']
+      minified:
+        options:
+          urls: ['http://localhost:8000/test/runner-min.html']
 
     yuidoc:
       compile:
@@ -64,6 +67,6 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks('grunt-contrib-yuidoc')
   grunt.loadNpmTasks('grunt-contrib-compress')
 
-  grunt.registerTask('default', ['connect', 'qunit', 'uglify', 'compress'])
-  grunt.registerTask('test', ['connect', 'qunit'])
+  grunt.registerTask('default', ['connect', 'qunit:uncompressed', 'uglify', 'qunit:minified', 'compress'])
+  grunt.registerTask('test', ['connect', 'qunit:uncompressed'])
   grunt.registerTask('doc', ['yuidoc'])

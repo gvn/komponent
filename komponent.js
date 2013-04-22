@@ -1,3 +1,4 @@
+/*global Komponent: true */
 /*jslint browser: true, sloppy: true, forin: true, plusplus: true, maxerr: 50, indent: 4 */
 
 /*
@@ -15,13 +16,13 @@
 
 */
 
-if (typeof window.Komponent !== 'undefined') {
-    throw 'Global "Komponent" already in use.';
+if (typeof Komponent !== 'undefined') {
+    throw '"Komponent" already in use';
 }
 
-window.Komponent = function () {};
+Komponent = function () {};
 
-window.Komponent.mixin = {
+Komponent.mixin = {
 
     /**
      * Bind a callback function to a named event type.
@@ -111,17 +112,17 @@ window.Komponent.mixin = {
  * @return {undefined}
  */
 
-window.Komponent.mix = function (target) {
+Komponent.mix = function (target) {
     var method;
 
     // Target object needs a place to store callback references
     target.callbacks = {};
 
-    for (method in window.Komponent.mixin) {
-        target[method] = window.Komponent.mixin[method];
+    for (method in Komponent.mixin) {
+        target[method] = Komponent.mixin[method];
     }
 };
 
 // Objects created using the 'new' operator only get the event methods and not 'mix' since it's a utility
 
-window.Komponent.prototype = window.Komponent.mixin;
+Komponent.prototype = Komponent.mixin;
