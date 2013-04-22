@@ -1,4 +1,4 @@
-![Komponent](https://dl.dropboxusercontent.com/u/268451/komponent-logo.png)
+![Komponent](http://gvn.github.io/komponent/komponent-logo.png)
 
 **A base class for event driven JavaScript components.**
 
@@ -42,7 +42,7 @@ myWidget.on('show', function (event) {
 
 Alternatively, you can use Komponent's event methods on existing objects as a mixin.
 
-Komponent has a utility method, `mix`, for accomplishing this. 
+Komponent has a utility method, `mix`, for accomplishing this.
 
 ```javascript
 var existingObject = {};
@@ -58,6 +58,8 @@ Note that you can access Komponent's event module by referencing `Komponent.mixi
 **on** ( eventType: `string`, callback: `function` )
 
 Bind a callback function to a named event type.
+
+Returns a numerical ID for the handler, which can later be used with *unbind*.
 
 **unbind** ( eventType: `string`, id: `number` - *optional* )
 
