@@ -39,7 +39,7 @@ test('Multiple external event handlers for same event', function () {
     strictEqual(callbacksFired, 2, 'Both callbacks fired when subscribed.');
 });
 
-test('Unbinding an external event handler', function () {
+test('Removing an external event handler', function () {
     var myWidget = new Widget(),
         callbackFired = false;
 
@@ -50,7 +50,7 @@ test('Unbinding an external event handler', function () {
     myWidget.action();
     ok(callbackFired, 'Callback fired when it\'s subscribed.');
 
-    myWidget.unbind('action');
+    myWidget.off('action');
     callbackFired = false;
     myWidget.action();
 

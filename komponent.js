@@ -40,21 +40,21 @@ Komponent.mixin = {
 
         this.callbacks[eventType].push(callback);
 
-        // Return callback index in case you want to unbind only this callback
+        // Return callback index in case you want to remove only this callback
         return this.callbacks[eventType].length - 1;
     },
 
     /**
-     * Unbind callbacks for given event type.
+     * Remove callbacks for given event type.
      * All callbacks of given type will be removed if no ID is provided.
      *
-     * @method unbind
+     * @method off
      * @param  {String} eventType
      * @param  {Number} id
      * @return {undefined}
      */
 
-    unbind: function (eventType, id) {
+    off: function (eventType, id) {
         if (typeof id === 'number') {
             this.callbacks[eventType][id] = null;
         } else {
@@ -63,7 +63,7 @@ Komponent.mixin = {
     },
 
     /**
-     * Register a callback that will unbind after it fires once
+     * Register a callback that will be removed after it fires once
      *
      * @method once
      * @param  {String}   eventType
@@ -76,7 +76,7 @@ Komponent.mixin = {
 
         id = this.on(eventType, function (eventData) {
             callback.call(this, eventData);
-            this.unbind(eventType, id);
+            this.off(eventType, id);
         });
     },
 

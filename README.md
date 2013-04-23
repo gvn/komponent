@@ -59,15 +59,15 @@ Note that you can access Komponent's event module by referencing `Komponent.mixi
 
 Bind a callback function to a named event type.
 
-Returns a numerical ID for the handler, which can later be used with *unbind*.
+Returns a numerical ID for the handler, which can later be used with *off*.
 
-**unbind** ( eventType: `string`, id: `number` - *optional* )
+**off** ( eventType: `string`, id: `number` - *optional* )
 
 Unbind callbacks for given event type. All callbacks of given type will be removed if no ID is provided.
 
 **once** ( eventType: `string`, callback: `function` )
 
-Register a callback that will unbind after it fires once.
+Register a callback that will be removed after it fires once.
 
 **fire** ( eventType: `string`, eventData: `object` - *optional* )
 
