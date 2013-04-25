@@ -19,7 +19,7 @@ module.exports = (grunt) ->
 
     uglify:
       options:
-        banner: '/*! <%= pkg.name %> <%= pkg.version %> <%= grunt.template.today("yyyy-mm-dd HH:MM") %> */\n'
+        banner: '// <%= pkg.name %> <%= pkg.version %> <%= grunt.template.today("yyyy-mm-dd HH:MM") %> <%= pkg.homepage %>\n'
       build:
         src: 'komponent.js'
         dest: 'komponent.min.js'
