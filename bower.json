@@ -1,0 +1,12 @@
+{
+  "name": "komponent",
+  "version": "0.3.1",
+  "main": "komponent.js",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
