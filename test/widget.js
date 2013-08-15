@@ -1,6 +1,3 @@
-/*global $: false, console: false, Komponent: false */
-/*jslint browser: true, sloppy: true, forin: true, plusplus: true, maxerr: 50, indent: 4 */
-
 /*
 
     Widget

@@ -1,6 +1,3 @@
-/*global test: false, equal: false, ok: false, Widget: false, strictEqual: false, Komponent: false */
-/*jslint browser: true, sloppy: true, forin: true, plusplus: true, maxerr: 50, indent: 4 */
-
 test('One external event handler', function () {
     var myWidget = new Widget(),
         callbackFired = false;

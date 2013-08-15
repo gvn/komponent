@@ -1,19 +1,8 @@
-/*global console: false, Komponent: false */
-/*jslint browser: true, sloppy: true, forin: true, plusplus: true, maxerr: 50, indent: 4 */
-
 /*
 
     %COMPONENT_NAME%
     VERSION 0.0.1
     AUTHOR %AUTHOR%
-
-    DEPENDENCIES:
-
-    - komponent.js
-
-    TODO:
-
-    -
 
 */
 
