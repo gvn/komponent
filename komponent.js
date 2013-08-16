@@ -7,10 +7,6 @@
     VERSION 0.3.2
     AUTHOR Gvn Lazar Suntop
 
-    TODO:
-
-    -
-
 */
 
 (function (root, factory) {
