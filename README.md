@@ -1,6 +1,6 @@
 ![Komponent](http://gvn.github.io/komponent/komponent-logo.png)
 
-**A base object for event driven JavaScript components.**
+**A base object and scaffolding generator for event driven JavaScript components.**
 
 Author: [Gvn Lazar Suntop](mailto:gavin@gsuntop.com)
 
