@@ -6,7 +6,9 @@ Author: [Gvn Lazar Suntop](mailto:gavin@gsuntop.com)
 
 ## Yeoman Generator
 
-To easily create new Komponents run `npm install -g generator-komponent` to install a command line generator.
+To easily create new Komponents, install the generator:
+
+`npm install -g generator-komponent`
 
 ## Bower
 
