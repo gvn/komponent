@@ -1,32 +1,26 @@
 ![Komponent](http://gvn.github.io/komponent/komponent-logo.png)
 
-**A base object and scaffolding generator for event driven JavaScript components.**
+**A base for event driven JavaScript components.**
 
 Author: [Gvn Lazar Suntop](mailto:gavin@gsuntop.com)
 
-## CLI Installation
+## Yeoman Generator
 
-Komponent can be used stand-alone, but the **komp** utility makes creating components easier.
-
-To install **komp** via [npm](https://npmjs.org/) run the following command:
-
-`npm install -g komponent`
-
-Afterward, you can create a new component by running `komp`. It will prompt you for various metadata and create a new JavaScript component file based on the [starter template](https://github.com/gvn/komponent/blob/master/template.js).
+To easily create new Komponents run `npm install -g generator-komponent` to install a command line generator.
 
 ## Bower
 
 Komponent is available via the Bower package manager:
 
-`bower install komponent`
+`bower install komponent -S`
 
-*You will likely want to use the -S flag to save as a project dependency.*
+*The -S flag will indicate Komponent as a dependency in your bower.json*
 
 ## Typical Usage
 
 If you're not using a module loader then include **[komponent.min.js](https://github.com/gvn/komponent/raw/master/komponent.min.js)** in your project. Otherwise, include it according to your loader's specification. Komponent supports both AMD and CommonJS via the [UMD pattern](TODO: INCLUDE LINK).
 
-Run **komp** to interactively create a new component via the command line. Your new component will inherit an event API from Komponent and have a starter scaffolding.
+Run `yo komponent` to interactively create a new component via the command line. Your new component will inherit an event API from Komponent and have a starter scaffolding.
 
 Add calls to the `fire` method wherever you want subscribable custom events. You can optionally pass event metadata to the callback function with an object literal.
 
